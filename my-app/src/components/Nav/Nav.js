@@ -5,10 +5,10 @@ const Nav = props => (
 
   <nav className="navbar">
     <h1 className="brand">
-      <a href="/">{props.children}</a>
+      <a href="/">{props.title}</a>
     </h1>
-    <h1 className="">You guessed Correctly!</h1>
-    <h1>Score: 0 | Top Score: 5</h1>
+    <h1>Correct: {props.rightwrong}</h1>
+    <h1>Score: {props.score} | Top Score: {props.topscore}</h1>
   </nav>
 );
 

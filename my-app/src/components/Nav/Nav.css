@@ -4,13 +4,13 @@ nav {
   color: red;
   margin-bottom: 50px;
   background-color: rgba(73, 73, 73, 0.363);
+  padding: 20px;
   height: auto;
   font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 a {
   color:whitesmoke;
-
 }
 
 a:hover {
