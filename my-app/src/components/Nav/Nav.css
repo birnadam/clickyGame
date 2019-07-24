@@ -1,37 +1,12 @@
 nav {
-  width: 100%;
   font-size: 3rem;
   color: red;
-  margin-bottom: 50px;
+  margin-bottom: 20px;
   background-color: rgba(73, 73, 73, 0.363);
-  padding: 20px;
   height: auto;
   font-family: Georgia, 'Times New Roman', Times, serif;
-}
-
-a {
-  color:whitesmoke;
-}
-
-a:hover {
-  color:red;
-  text-decoration: none;
-}
-
-nav li {
-  display: inline-block;
-  padding: 26px 0;
-  width: 25%;
-  text-align: center;
-}
-
-ul {
-  display: flex;
-  align-items: center;
-}
-
-@media only screen and (max-width: 750px) {
-  #cur-sco, #top-sco {
-    font-size: 2rem;
-  }
+  width: 90%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

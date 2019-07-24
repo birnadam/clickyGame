@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component } from "react";
 import FriendCard from "./components/FriendCard";
 import Nav from "./components/Nav";
 import Wrapper from "./components/Wrapper";
@@ -7,51 +7,86 @@ import Container from "./Container";
 import Row from "./Row";
 import Column from "./Column";
 import friends from "./friends.json";
-import './App.css';
+import "./App.css";
 
-function shuffleFriends(array) {
-  for (let i = array.length - 1; i > 0; i--) {
-    let j = Math.floor(Math.random() * (i + 1));
-    [array[i], array[j]] = [array[j], array[i]];
-  }
-  return array;
-};
+let count = 0;
+let topscore = 0;
+let rightwrong = "Click away, but don't click the same character twice!";
 
 class App extends Component {
-  // Setting this.state.friends to the friends json array
+  // Setting this.state
   state = {
     friends,
-    count: 0,
-    topscore: 0,
-    rightwrong: ""
+    count,
+    topscore,
+    rightwrong
   };
 
-  handleShuffle = () => {
-    // let friends = this.state.friends;
-    let shuffledFriends = shuffleFriends(friends);
-    this.setState({ friends: shuffledFriends });
-console.log(this.state.friends);
+  setClicked = id => {
+    // Making a copy of the array 
+    const friends = this.state.friends;
+
+    // Filter for the clicked friend
+    const clickedfriend = friends.filter(friend => friend.id === id);
+
+    // If click value is already true for the one picked
+    // do the game over action
+    if (clickedfriend[0].clicked) {
+      // console.log("Correct Guesses: " + count);
+      // console.log("Best Score: " + topscore);
+      count = 0;
+      rightwrong = "GG! You've already clicked this, you lose! :("
+      for (let i = 0; i < friends.length; i++) {
+        friends[i].clicked = false;
+      }
+      this.setState({ rightwrong });
+      this.setState({ count });
+      this.setState({ friends });
+
+      // Otherwise, if clicked = false, game continues
+    } else if (count < 11) {
+
+      // Set the one that's been clicked to true
+      clickedfriend[0].clicked = true;
+
+      // Increment
+      count++;
+      rightwrong = "You pwn! You haven't clicked any twice, keep going! :)";
+      if (count > topscore) {
+        topscore = count;
+        this.setState({ topscore });
+      }
+
+      // Shuffle the array, rendering cards in different locations
+      friends.sort(function (a, b) { return 0.5 - Math.random() });
+
+      // Set this.state.friends equal to the new friends array
+      this.setState({ friends });
+      this.setState({ count });
+      this.setState({ rightwrong });
+    } else {
+
+      clickedfriend[0].clicked = true;
+
+      // Restart the counter
+      count = 0;
+
+      // Challenge the user to go again
+      rightwrong = "You think you're hot stuff? Bet you can't do it again! ._.";
+      topscore = 12;
+      this.setState({ topscore });
+      for (let i = 0; i < friends.length; i++) {
+        friends[i].clicked = false;
+      }
+
+      friends.sort(function (a, b) { return 0.5 - Math.random() });
+
+      this.setState({ friends });
+      this.setState({ count });
+      this.setState({ rightwrong });
+    }
   };
 
-  handleIncrement = () => {
-    this.setState({
-      count: this.state.count + 1,
-      topscore: this.state.topscore + 1,
-      rightwrong: "Correct!"
-    });
-    this.handleShuffle();
-  };
-  handleReset = () => {
-    // this.setState({topscore: this.state.count});
-    this.setState({
-      count: 0,
-      topscore: this.state.topscore,
-      rightwrong: "Bork!"
-    });
-    this.handleShuffle();
-  };
-
-  // Map over this.state.friends and render a FriendCard component for each friend object
   render() {
     return (
       <Wrapper>
@@ -59,10 +94,9 @@ console.log(this.state.friends);
           title='ST Memory Game'
           score={this.state.count}
           topscore={this.state.topscore}
-          rightwrong={this.state.rightwrong}
         />
 
-        <Title><span>Click away, but don't click the same character twice!</span></Title>
+        <Title><span>{this.state.rightwrong}</span></Title>
 
         <Container>
           <Row>
@@ -70,9 +104,7 @@ console.log(this.state.friends);
               <Column size="md-3 sm-4">
                 <FriendCard
                   key={friend.id}
-                  handleIncrement={this.handleIncrement}
-                  handleShuffle={this.handleShuffle}
-                  handleReset={this.handleReset}
+                  setClicked={this.setClicked}
                   id={friend.id}
                   image={friend.image}
                 />
