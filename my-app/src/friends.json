@@ -1,50 +1,62 @@
 [
   {
     "id": 1,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/chief.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/chief.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 2,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/dustin.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/dustin.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 3,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/eleven.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/eleven.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 4,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/jonathan.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/jonathan.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 5,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/joyce.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/joyce.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 6,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/lucas.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/lucas.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 7,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/max.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/max.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 8,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/mike.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/mike.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 9,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/nancy.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/nancy.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 10,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/robin.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/robin.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 11,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/steve.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/steve.jpg?raw=true",
+    "clicked": false
   },
   {
     "id": 12,
-    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/will.jpg?raw=true"
+    "image": "https://github.com/birnapwnsu/clickyGame/blob/master/my-app/public/images/will.jpg?raw=true",
+    "clicked": false
   }
 ]

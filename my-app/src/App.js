@@ -9,22 +9,46 @@ import Column from "./Column";
 import friends from "./friends.json";
 import './App.css';
 
+function shuffleFriends(array) {
+  for (let i = array.length - 1; i > 0; i--) {
+    let j = Math.floor(Math.random() * (i + 1));
+    [array[i], array[j]] = [array[j], array[i]];
+  }
+  return array;
+};
+
 class App extends Component {
   // Setting this.state.friends to the friends json array
   state = {
     friends,
-    count: 0
+    count: 0,
+    topscore: 0,
+    rightwrong: ""
+  };
+
+  handleShuffle = () => {
+    // let friends = this.state.friends;
+    let shuffledFriends = shuffleFriends(friends);
+    this.setState({ friends: shuffledFriends });
+console.log(this.state.friends);
   };
 
   handleIncrement = () => {
-    this.setState({ count: this.state.count + 1 });
-  }
-
-  removeFriend = id => {
-    // Filter this.state.friends for friends with an id not equal to the id being removed
-    const friends = this.state.friends.filter(friend => friend.id !== id);
-    // Set this.state.friends equal to the new friends array
-    this.setState({ friends });
+    this.setState({
+      count: this.state.count + 1,
+      topscore: this.state.topscore + 1,
+      rightwrong: "Correct!"
+    });
+    this.handleShuffle();
+  };
+  handleReset = () => {
+    // this.setState({topscore: this.state.count});
+    this.setState({
+      count: 0,
+      topscore: this.state.topscore,
+      rightwrong: "Bork!"
+    });
+    this.handleShuffle();
   };
 
   // Map over this.state.friends and render a FriendCard component for each friend object
@@ -34,8 +58,9 @@ class App extends Component {
         <Nav
           title='ST Memory Game'
           score={this.state.count}
-        >
-        </Nav>
+          topscore={this.state.topscore}
+          rightwrong={this.state.rightwrong}
+        />
 
         <Title><span>Click away, but don't click the same character twice!</span></Title>
 
@@ -46,7 +71,8 @@ class App extends Component {
                 <FriendCard
                   key={friend.id}
                   handleIncrement={this.handleIncrement}
-                  removeFriend={this.removeFriend}
+                  handleShuffle={this.handleShuffle}
+                  handleReset={this.handleReset}
                   id={friend.id}
                   image={friend.image}
                 />

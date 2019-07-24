@@ -7,7 +7,7 @@ const Nav = props => (
     <h1 className="brand">
       <a href="/">{props.title}</a>
     </h1>
-    <h1>Correct: {props.rightwrong}</h1>
+    <h1>You are {props.rightwrong}</h1>
     <h1>Score: {props.score} | Top Score: {props.topscore}</h1>
   </nav>
 );

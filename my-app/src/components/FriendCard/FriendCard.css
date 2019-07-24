@@ -4,6 +4,7 @@ border-radius: 2px;
 width: 150px;
 height: 150px;
 margin: 2rem;
+transition: all .2s ease-in-out;
 position: relative;
 box-shadow: 6px 6px 6px #999;
 }
@@ -20,4 +21,10 @@ height: 100%;
 
 .card:hover {
 opacity: 0.8;
+box-shadow: 8px 8px 20px #999;
+transform: scale(1.1);
+}
+
+.card:active {
+transform: translate(1px, 1px);
 }
