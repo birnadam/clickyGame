@@ -11,9 +11,9 @@ clickyGame was created using **Create React App**, a tool built by developers at
 FriendCard, Nav, Title, and Wrapper. The FriendCard is how the characters are stored on the page. All the characters are stored in a friends.json; each object containing an id, an associated image, and the boolean of "clicked". The clicked value is defaulted at false, but changed to true on the user's click. Aside from that there are other values that are updated as the game progresses as well.
 
 ## How it works
-Visit the deployed site and test your memory: https://birnapwnsu.github.io/clickyGame/
+Visit the deployed site and test your memory: https://birnadam.github.io/clickyGame/
 <br>*OR* do the following:
-1. Clone this repository: https://github.com/birnapwnsu/clickyGame.git
+1. Clone this repository: https://github.com/birnadam/clickyGame.git
 2. Pull up the terminal in clickyGame/my-app and type "npm init -y" to intialize your package.json
 3. Then type in "npm install" to install all the proper modules
 4. Lastly, type either "npm start" or "yarn start" to start the server
